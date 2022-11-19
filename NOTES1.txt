@@ -1,0 +1,295 @@
+
+React js created by "Facebook"
+
+React is Javascript library for buildeing UserInterfaces.
+
+Reactjs is open source and,component based front end library 
+
+It is widely used as a base in building single-page websites and mobile applications. 
+
+it allows users to create reusable UI components.
+
+
+Checklist/Prerequisites:
+--------------------------
+1.Basic knowledge of HTML, CSS, and JavaScript.
+2.Some ES6 features of Javascript like
+      Let and Const
+      Arrow Functions
+3.Class and ‘this’ keyword
+4.Fundamentals of NodeJS & Code Editors
+
+
+
+About NodeJs:
+----------
+* NodeJS is an execution environment for javascript.
+*You cannot perform any operation outside the browser like File operations,
+     OS operations, Network Operations and so here Node came into existence.
+*Node allows you to do all these operations outside the browser.
+* It is embedded with chrome’s V8 engine.
+
+NPM (Node Package Manager):
+========================= 
+NPM is a package manager to install node modules and packages to your project 
+just like PIP for python.
+
+Import:
+-------- 
+Once you will install the Node module using NPM in your project
+          you will have to use the ‘import’ keyword to use that module.
+Export:
+--------- 
+Use this keyword when you are creating a module/component and you have
+                      to return only a part, not all the methods and variables.
+					  
+					  
+					  
+Features of React.js::
+--------------------------
+jsx:
+----
+JSX is and extension of javaScript 
+ It enables the Virtual DOM by using XML Syntax.
+ It compiles down to pure JavaScript.
+ it is faster than normal javascript.
+ it is easy ti create Tamplates.
+ it is not mandetory to use JSX in Reactjs.
+ 
+ JavaScript example
+ ----------------------
+let element = React.createElement('h1', {}, 'This is JavaScript')
+
+JSX equivalent:
+------------------
+
+let element = <h1>This is JSX</h1>
+ 
+
+Virtual DOM:
+=============
+ React creates a virtual dom.
+ it is like a lightweight copy of the actual DOM.
+ object in virtual Dom But no power to change in Actual DOM.
+ manipulating of vitual DOM is fast.
+
+
+One Way DatA Binding:
+-------------------
+
+
+Component:
+----------
+
+
+Performance:
+------------
+
+
+
+
+
+Components:
+-----------
+
+components are two types:
+   1.functional Components
+   2. Class Components:
+   
+   
+Functional Components:
+----------------------
+it is simply like javascript functions.
+
+we can create these components by using javascript functions.
+
+
+ex:
+----
+
+
+
+function FunctionCompEx()
+
+{
+
+return <h1>Welcome To India</h1>;
+
+}
+
+export default FunctionCompEx;
+
+
+
+Class Components:
+--------------
+
+this components are little different than functional components.
+
+class compoennts can work together.
+
+we can pass data from one class to another class.
+
+we can use jsES6 classes to create class based compoennts.
+
+ex:
+--
+
+
+class ClassCompEx extends React.Component
+
+{
+
+render(){
+
+		return <h1>Welcome Message!</h1>;
+
+}
+
+}
+export default ClassCompEx;
+
+
+
+
+
+
+
+
+
+Lists:
+=======
+List are very useful when its comes to front end developemnt.
+it is used to display navbar,menus in a website.
+
+ In javascript we can use "arrays" to cretae a list.
+ 
+ map() function we can use to travsrse the list.
+ 
+ 
+ ex:
+ -----
+ 
+ 
+import React from 'react'
+
+//rfce=shortcut functional 
+
+function NamesListEx() {
+
+    const names=['bruse','keerthi','sathya']
+
+  const   nameList=names.map(x => <h3>{x}</h3>)
+  return (
+    <div>
+{/* 
+  <h2>{names[0]}</h2>
+  <h2>{names[1]}</h2>
+  <h2>{names[2]}</h2> */}
+
+{/* this is not the way to disply the list of values we can use map method */}
+
+{
+
+   nameList
+}
+
+    </div>
+  )
+}
+
+export default NamesListEx
+
+
+
+
+
+
+ex2:
+---
+
+import React from 'react'
+
+//this is not way to list for updation
+
+function UpdateNumbEx() {
+
+    const numbers=[1,4,7,9,4]
+
+    const upnum=numbers.map(x => <h4><li>{x*2}</li></h4>)
+  return (
+    <div>
+          <ul>{ upnum}</ul>
+    </div>
+  )
+}
+
+export default UpdateNumbEx
+
+
+
+
+exe 3:
+---------
+import React from 'react'
+
+//this is correct way to updated list passing props
+
+function NewListEx() {
+
+const marks=[56,45,23,48]
+
+const upmarks=marks.map(x => <li>{x+5}</li>)
+
+  return (
+    <div>
+            <ul>
+                {upmarks}
+            </ul>
+    </div>
+  )
+}
+
+export default NewListEx
+
+
+
+ex 4:
+----
+import React from 'react'
+
+function PersonEx() {
+
+    const persons=[
+
+        {
+            id : 1,
+            name :'divya',
+            age : 21,
+            skill : 'beliving'
+        },
+        {
+            id : 2,
+            name :'tarun',
+            age : 18,
+            skill : 'acting'
+        }
+    ]
+
+    const personList = persons.map(x => <h3>i am {x.name}. i am {x.age} years old. i know {x.skill}</h3>  )
+  return (
+    <div>
+            {personList}
+    </div>
+  )
+}
+
+export default PersonEx
+
+ 
+
+
+
+
+
+

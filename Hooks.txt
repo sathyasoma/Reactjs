@@ -1,0 +1,95 @@
+
+
+
+*Hooks are the new feature introduced in the React 16v.
+
+*Hooks are the functions , it does not work in classes.
+
+*Hooks are backward-compatible, which means it does not contain any breaking changes.
+
+*if you are using any functions , if you want change any state directly will go to the Hooks.
+
+
+Note:
+-------
+* Dont call hooks inside the loops,conditions, na dnested functions.
+
+*You cannot call Hooks from regular JavaScript functions.
+
+*Hooks can also be called from custom Hooks
+
+
+
+
+UseState:
+---------
+
+example is useState Hook,
+   we can call useState inside the function only.
+   
+The useState function will return two parameters(initialstate,exchangevaluestate)
+
+
+syntax:
+=======
+
+
+const [state,setState]=useState(initial values);
+
+
+
+
+
+import React from "react";
+import { useState } from "react";
+
+const CountApp= () =>{
+
+    const [count, setCount] = useState(0);
+
+    return(
+        <>
+            <h3>Marks:{count}</h3>
+            <button onClick={()=>setCount(count+1)}>click me</button>
+        </>
+    )
+}
+export default CountApp;
+
+
+
+App.js:
+-------
+
+import CountApp from 
+
+
+<CountApp><CountApp/>
+
+
+
+ 
+UseEffect:
+----------
+
+*The useEffect will allow us to perform "sideEffects" in the function component.
+
+*Some examples of side effects are: fetching data, directly updating the DOM, and timers.
+
+*It does not use components life cycle methods ,its available in class components 
+
+***useEffect accepts two arguments(<function>,<dependency>)
+
+
+
+
+
+
+
+
+
+
+
+
+
+

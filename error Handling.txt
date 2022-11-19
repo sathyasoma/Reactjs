@@ -1,0 +1,10 @@
+
+Error Handling:
+---------------
+
+We can divide errors broadly into two types, and error handling into two aspects.
+
+The two error types:
+
+1.JavaScript errors
+2.Render errors

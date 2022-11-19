@@ -1,0 +1,93 @@
+
+
+
+                            Node.js was written and introduced by Ryan Dahl in 2009.
+							
+							
+							Node.js official web site: https://nodejs.org
+
+                            Node.js on github: https://github.com/nodejs/node
+
+                            Node.js community conference http://nodeconf.com
+							
+							
+							
+							
+	sitelink:https://www.tutorialsteacher.com/nodejs/nodejs-process-model
+
+
+
+	
+*Node.js is an open-source and cross-platform runtime environment
+  built on Chrome’s V8 JavaScript engine for executing JavaScript 
+  code outside of a browser. 
+*NodeJS isn’t a framework, and it’s not a programing language
+*Node.js for building back-end services like APIs, Web App, or Mobile App.
+*Node.js can be used to build different types of applications such as command line application,
+       web application, real-time chat application, REST API server etc. 
+*However, it is mainly used to build network programs like web servers, similar to PHP, Java, or ASP.NET.
+
+
+Advantages of Node.js:
+----------------------
+*Node.js is an open-source framework under MIT license.
+*Uses JavaScript to build entire server side application.
+*Lightweight framework that includes bare minimum modules. 
+*Asynchronous by default. So it performs faster than other frameworks.
+
+
+
+Traditional Web Server Model:
+----------------------------
+*In the traditional web server model, each request is handled by a dedicated thread from the thread pool.
+*If no thread is available in the thread pool at any point of time then the request waits till the 
+           next available thread.
+*Dedicated thread executes a particular request and does not return to thread pool until 
+   it completes the execution and returns a response.
+
+
+
+
+
+
+
+
+
+Node.js Process Model:
+=====================
+*Node.js runs in a single process and the application code 
+           runs in a single thread and thereby needs less resources than other platforms.
+*Node.js is not fit for an application which performs CPU-intensive operations like image
+                processing or other heavy computation work because it takes time to process
+				a request and thereby blocks the single thread.
+
+
+Why Do We Use NodeJs?:
+----------------------
+*NodeJs is built on Google Chrome’s V8 engine, and for this reason its execution time is very fast 
+       and it runs very quickly.
+**There are more than 50,000 bundles available in the Node Package Manager 
+*The loading time for an audio or video is reduced by NodeJs because there is better synchronizat
+*As NodeJs is open-source and it is nothing but a JavaScript framework
+
+Features of NodeJs:
+--------------------
+
+
+Asynchronous in Nature and Event driven
+Single Threaded Architecture
+Scalable
+Quick Execution time for code:
+Compatibility on the cross platforms
+Uses JavaScript
+Fast Data Streaming
+No Buffering 
+
+
+
+
+
+
+
+
+

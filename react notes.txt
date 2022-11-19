@@ -1,0 +1,213 @@
+* In react there are two types of components
+  1) Class Component
+  2) Functional Component
+
+
+* A functional component is basically a JavaScript/ES6 function that returns a React element (JSX).
+  ```
+    function Welcome() {
+      return <h1>Hello</h1>;
+    }
+  ```
+  or 
+  ```
+    const Welcome = () =>  <h1>Hello</h1>; 
+  ```
+
+* The first and recommended component type in React is functional components. 
+	
+
+
+Life without functional components & hooks
+==========================================
+* React.CreateClass
+* Class in java script itself complex.
+    - No one knows how this key word works. May be you can but for most of them out there it is difficult to understand.
+    - Multiple life cycle
+    - Calling super(props) qu
+    ite annoying
+
+* Hard to understand life cycles.
+
+* Duplicate logic inside lifecycle methods
+class List {
+
+    componentDidMount() {
+        this.GetList(this.props.id);
+    }
+
+    componentDidUpdate(prevProps) {
+        if(prevState.id != this.props.id) {
+            this.GetList(this.props.id);
+        }
+    }
+
+    GetList() {
+        // logic to get list
+    }
+    ...
+}
+
+* Sharing non visual logic. It’s hard to reuse stateful logic between components.
+    May be done by higher order components, or render props.
+    -> Complex
+    -> Render props may lead to wrapper hell.
+
+Simplest answer to this? -> Function
+
+
+
+Hooks:
+=====
+* Hooks are a new addition in React 16.8. They let you use state and other React features without writing a class.
+
+* Hooks are now available with the release of v16.8.0.
+
+* Completely opt-in:
+ You can try Hooks in a few components without rewriting any existing code. But you don’t have to learn or use Hooks right now if you don’t want to.
+
+* 100% backwards-compatible:
+ Hooks don’t contain any breaking changes.
+
+* There are no plans to remove classes from React.
+
+* Hooks don’t replace your knowledge of React concepts. Instead, Hooks provide a more direct API to the React concepts you already know: props, state, context, refs, and lifecycle.
+
+
+
+
+
+* Before hooks functional components are stateless components.
+* We can maintain state using `useState` React Hook
+
+# Syntax
+```
+const [x, setX] = useState(defaultValueOfX)
+```
+    -> useState returns array
+    [presetStateValue, functionToChangeTheStateValue]
+
+const [x, setX] = [presetStateValueofX, functionToChangeTheStateValueofX]
+
+
+
+
+
+
+
+
+
+# useEffect Hook
+### The Effect Hook lets you perform side effects in function components.
+* A "side effect" is anything that affects something outside the scope of the function being executed.
+  * Data fetching / API Calls
+  * setting up a subscription
+  * manually changing the DOM in React components are all examples of side effects.
+
+
+# Syntax:
+`useEffect(callback, dependencies)`
+
+Where: 
+* callback: `function`
+* dependencies: `Dependencies are optional parameter of type array`. 
+```
+useEffect(function(){
+    ...Do Stuff here
+}, [ele1, ele2, ele2])
+```
+
+When does useEffect hook calls?:
+* By default, it runs both after the first render and after every update.`
+  
+# Dependencies argument:
+dependencies argument of `useEffect(callback, dependencies)` lets you control when the side-effect runs. When dependencies are:
+
+* Not provided: 
+  - the side-effect runs after every rendering.
+    ```
+        Ex: useEffect(function(){
+            ...do stuff here
+        });
+    ```
+* B) An empty array `[]`: 
+        
+    - The side-effect runs once after the initial rendering. 
+    - Similer to component did mount
+
+    ```        
+        Ex: useEffect(function(){
+            ...do stuff here
+        }, []);
+    ```
+    
+* Has props or state values `[prop1, prop2, ..., state1, state2]`:
+        
+    - The side-effect runs only when any depenendecy value changes.
+    - Similer to Component Did update in class component
+    
+    ```
+    Ex: useEffect(function(){
+            ...do stuff here
+    },[x]);
+    ```
+
+useEffect = `componentDidMount + componentDidUpdate + componentWillUnmount`.
+
+* You can maintain more than one `useEffect` in a single component.
+  
+# useEffect cleanup
+* If we return a function within the method, this function will execute when the component gets unmounted.
+
+        useEffect(function() {
+            ...effect
+            return() => {
+                ...cleanup code
+            }
+        })
+
+
+
+
+
+
+
+
+
+
+# useContext
+* `useContext` hook is used to create common data that can be accessed throughout the component hierarchy without passing the props down manually to each level.
+* Accepts a context object (the value returned from React.createContext) and returns the current context value for that context.
+# How to use UseContext?
+* create context and export if it is not present in the intended file.
+  Ex: 
+  ```
+  const UserContext = createContext(userContext)
+  ```
+* Wrap to level component under context provider. Here we can set the value in the context
+  
+  ```
+  UserContext.Provider value={user}>
+        <div>
+            <Profile />
+        </div>
+    </UserContext.Provider>
+  ```
+
+* Accessing the context.
+  
+  ```
+  const user = useContext(UserContext);
+  ```
+
+
+
+
+
+
+* custom hook always start with `use`
+  
+# Uses
+* Extract non-visual logic into separate hook and reuse.
+* Easy to understand
+* Easy to test
