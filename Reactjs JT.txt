@@ -1,0 +1,1007 @@
+
+
+         =========================Reactjs===========================
+		               
+				Creator:	      Jordan Walke
+                              he was software engineer in "Facebook"
+							 
+					*facebook developed Reactjs in 2011,in newsFeed Section 
+                          But it released in public 2013
+						  
+						  
+					 Current version of create-react-app is v5.0.1 (April 2022).
+
+          create-react-app includes built tools such as webpack, Babel, and ESLint.
+		  
+		  
+		  
+
+Introduction:
+------------
+
+
+*ReactJS is one of the most popular JavaScript front-end libraries 
+                       which has a strong foundation and a large community.
+*Reactjs is a javascript library for building reuseble UI components.
+
+    it is opensource
+          component based
+		  front end library 
+		      responsible only for "view layer" application
+
+* initially used by Facebook later used in its products like(insta, wtsup)
+
+* 
+why React:
+---------
+*the main objective is to develope UI(user interface),it improves th speed of Application
+*It uses the Virtual DOM(javscript object), improves the application.
+     **Javascript Virtual faster than the regular DOM.
+*We can use Reactjs both ways either client side and server side with other frame works.
+*React js uses the Components and Patterns that improve readability it helps for larger aaps.
+
+
+*Nowadays to build websites we are using "MVC"(MODEL VIEW CONTROL)
+     React is deal with "V" stands for "View" 
+	        architecture is provided by Redux or Flux
+
+
+*React is made up of Multiple components,each component is reuseble of HTML code.
+*The Components are heart of all React Application.
+*ReactJs uses Virtual Dom based mechanism to fill data Html DOM.
+*Virtual works faster compare to Regular Dom (instead of reloading complte DOM)
+
+
+why learn React:
+----------------
+
+Many javascript frameworks(Angular,Vue) are available in the market "why React"
+      *other frameworks followed data flow structure.
+	  * other frameworks used "Real DOM"(WEBPAGE RELOADING TAKE LONG TIME)
+	      **When we use real Dom, when we did modifications it will create new DOM
+	          for same page.(memoery waste)
+	  
+Pre requisite for ReactJS:
+-----------------------
+* NodeJs and NPM
+*React DOM
+*Bable
+*webpack
+
+
+**install npm,nodejs
+
+**check in cmd versions
+
+ for node:  node -v
+ for npm:   npm -v 
+ 
+ 
+ 
+ Install React App:
+ =================
+ 
+ npm install  -g create-react-app 
+ 
+ 
+ * g(global)
+ 
+ create new react project:
+ --------------------------
+ 
+  syntax: create-react-app  appName
+ 
+           create-react-app  HelloWorld
+		   
+		   
+		   
+	or
+
+npx create-react-app projectname            <==**(combi of install and cretae new project)	
+		   
+		   
+* cd desktop
+
+* npm start
+
+
+Explanation about Reactjs project file strycture:
+------------------------------------------------
+
+
+
+node_modules(Folder):
+---------------------
+Contains all the dependencies that are needed for an initial working react app
+
+.gitignore(file):
+----------------
+This file specifies intentionally untracked files that Git should ignore
+
+package.json(file):
+----------------------
+This file contains various metadata that is relevant to our project. 
+  It specifies the dependencies being used in the project which helps npm setup same environment on different machine for our project.
+
+README.md(file):
+---------------------
+This file can be used to define usage, build instructions, summary of project, etc. 
+                  It uses markdown markup language to create content.
+
+yarn.lock(file):
+---------------
+This file has same purpose as package-lock.json, it ensures that your package is consistent across various machines by storing the versions 
+                    of which dependencies are installed with your package.
+
+public(folder):
+----------------
+Root folder that gets served up as our react app.
+
+favicon.ico(file):
+--------------------
+It’s an icon file that is used in index.html as favicon.
+
+index.html(file):
+-----------------
+It is the template file which is served up when we run start script to launch our app. 
+It is considered best practice not to create multiple html file in public folder instead use this file and inject 
+react components in this file’s root div container. Other css libraries, etc can be defined in this files.
+
+logo192.png & logo512.png(files):
+---------------------------------
+These are react logo which is of dimension 192*192 px and 512*512 px and is used in the template file (index.html)
+ by default. [can be removed once you are using your own component]
+
+manifest.json(file):
+--------------------
+It’s used to define our app, mostly contains metadata. Used by mobile phones to add web app to the home-screen of a device. Part of PWA.
+
+robots.txt(file):
+--------------------
+Defines rules for spiders, crawlers and scrapers for accessing your app.
+
+src(folder):
+-------------
+In simplest form it’s our react app folder i.e. containing components, tests, css files etc. It’s the mind of our app.
+
+App.css(file):
+----------------
+Contains styles of our react component(App.js)
+
+App.js(file):
+------------
+This file has very basic react component defined which can be replaced by our own root component
+
+App.test.js(file):
+-----------------
+A very basic test(for the default app) is defined in this file which can be replace by our own tests. [make use of Jest]
+
+index.css(file):
+------------------
+Contains styles for general setup of our app.
+
+index.js(file):
+---------------
+This files renders our component and registers service workers(unregistered by default)
+
+logo.svg(file):
+--------------
+Svg file of react logo, being used in component(App.js) by default.
+
+serviceWorker.js(file):
+---------------------
+Service worker for pre-caching the scripts files of our react app thereby improving performance.
+
+setupTests.js(file):
+--------------------	
+As the name suggest this files setups tests and runs them. This file in directly invoked when we run tests from cli(npm run test).[make use of Jest]
+
+
+
+
+React Features:
+===============
+*JSX
+*Components
+*One-way-data Binding
+*Virtual Dom
+*Simplicity
+*Performance
+
+
+
+React JSX:
+==========
+
+Mean: javascript xml
+
+* jsx is JAVASCRIPT EXTENSION
+*JSX provides you to write HTML/XML-like structures 
+      (e.g., DOM-like tree structures) in the same file where you write JavaScript code
+*then preprocessor will trasnform into actual javascript code 	  
+		   
+		   
+		   
+JSX Syntax:
+-----------   
+
+const myElement = <h1>I Love JSX!</h1>;
+
+
+
+without jsx:
+-----------
+
+const myElement = React.createElement('h1', {}, 'I do not use JSX!');
+		   
+		   
+		   
+why use jsx:
+------------
+*its faster than regular javascript.
+*it is type safe
+*it is easiar to cretae template.
+
+
+why use DIV TAG:
+---------------
+* To use more than one elelemnt, you need to wrap it with one container elelemnt.
+         *we can use "<div>" container.
+	
+
+
+***********
+**********
+          before define a class we need to import "react Component"
+		  before define any function we need to import "react"
+		  
+
+
+
+Nested elements by using class:
+-------------------------------
+
+
+1.import react component
+2.export default class name (after class declaration)
+3. import class name in APP.JS
+
+
+
+
+import React ,{Component}from "react";
+
+class NestEx extends Component{
+    render(){
+        return(
+            <div>
+                 <h3>to wrap many elements we need to wrap it together
+                       we can use div container
+                 </h3>
+                 <h4>nested in the sense many eleemnts we can use in the div tag</h4>
+                 <h5>wrapping all the elemnts together like in a  container</h5>
+            </div>
+        );
+    }
+}
+
+export default NestEx;
+
+
+
+
+Attribute Example;
+--------------------
+Attributes we can in two formats 
+      1.String litteral
+	  2.Expression
+
+
+
+*JSX use attributes with the HTML elements same as regular HTML.
+*jsx use Camelcase naming convention attributes rather by using regular html.
+*we can use our own attributes also in jsx.
+***for custom attributes we need to use ==== data-prefix.====
+      ex: <p data-demoAtri="demo">something</p>
+	  
+
+
+EXAMPLE:
+=========
+
+import React ,{Component}from "react";
+
+class AtributeEx extends Component{
+    render(){
+        return(
+    <div>
+     <h4>Basically attribute we are using HTML also,injsx we can use camelcase. </h4>
+    <h4>for custom attributes in jsx we can use different format: data-prefix</h4>
+    <h5>************jsx custom attribute**********</h5>
+    <p data-hello="demo"> welcome to custom attribute in jsx</p>
+    </div>
+        );
+    }
+}
+export default AtributeEx;
+
+
+
+
+ 1.String litteral:
+ --------------------------------
+ syntax:   var element = <h2 className = "firstAttribute">Hello JavaTpoint</h2>;  
+ 
+ 
+ ex:
+ ---
+ 
+ 
+import React,{Component} from "react";
+
+class StringAttri extends Component{
+
+    render(){
+        return(
+            <div>
+                <p className="hello">By using String litteral Attribute</p>
+                <p data-demoAttribute="demo">by custome attributes</p>
+            </div>
+        );
+    }
+}
+export default StringAttri;
+
+
+
+ 2.Expression:
+ -------------
+ syntax:
+ ---------
+ 
+var element = <h2 className = {varName}>Hello JavaTpoint</h2>;  
+
+
+ex:
+---
+import React,{Component} from "react";
+
+class ExpressionAttri extends Component{
+   render(){
+    return(
+        <div>
+            <h2>By using Expression Attributes</h2>
+            <h4 className="hello">{56+10}</h4>
+        </div>
+    );
+   }
+}
+export default ExpressionAttri;
+
+
+
+
+Block of code:
+==================
+
+
+
+class BlockAttri extends Component{
+
+    render(){
+const my=<ul>
+            <li>java</li>
+            <li>python</li>
+            <li>.Net</li>
+        </ul>
+    
+const myStyle={
+
+    color:'red'
+}
+        return(
+                 <div>
+            <h2 style={myStyle}>block of large code by using variable</h2>
+            <h3>{my}</h3>
+           
+            </div>
+        );
+    }
+
+}
+
+export default BlockAttri;
+
+
+Conditions IF:
+==============
+
+ex1:
+====
+
+
+import React,{Component} from "react";
+
+class IfEx extends Component{
+    render(){
+        var i=5;
+        return(  
+              <div>
+                   <h1>{i==3?'true':'false'}</h1>
+              </div>
+        );
+    }
+}
+export default IfEx;
+
+
+
+ex2:
+----
+
+
+import React,{Component} from "react";
+
+class IfEx1 extends Component{
+    render(){
+        const x=3;        
+        let text="good bye";
+        if(x<5){
+            text="welcome";
+        }
+//const my=<h2>{text}</h2>
+         return(
+            <div>
+         <h1>{text}</h1>
+            </div>
+         );
+    }
+}
+export default IfEx1;
+
+
+
+React Components:
+-----------------
+small Intro:
+------------
+* earliear days developers used to write 1000 of lines of codes to develope single application.
+*these applications follows traditional DOM structure,changes are very challenging task.
+
+*** To overcome this component based approach was introduced.
+
+  (The entire application is devided into small logical group known as "Component")
+  
+ **components makes building UI much easiar.
+ 
+ *each and every component work independtly but they are merge with parent component.
+ 
+ *every react component has its own methods and APIs .
+ 
+ * this every component we resuse everywhere as per your need.
+ 
+ 
+ 
+---
+*Components are simply like HTML elements.
+*Components are independent and resuseble bits of code.
+
+
+Types Of Components:
+--------------------
+
+1.Class Components (state-full components)
+
+2.Functional Components (state-less components)
+
+
+Class Components :
+==================
+
+* A class components must be extends the react.Component (inheritance )
+   
+     your components will take all access of React componet properities.
+	 
+*the component need render() method, this method returns "HTML"
+
+
+EX1:
+----
+
+import React,{Component} from "react";
+
+//class without parent(div) element
+class ClassEx extends Component{
+
+    render(){
+
+        return <h2>Hello i am class component(if 
+            you want use more than one element in the class compoennt you need to cretae parent elemnt)</h2>
+                   
+    }
+}
+export default ClassEx;
+
+
+EX2:
+---
+
+import React,{Component} from "react";
+
+//with parent(div) element
+class ClassEx1 extends Component{
+    
+      render(){
+        return(
+            <div>
+                <h2>by using parent elemnt"div"</h2>
+                <h3>by using parent elemnt we can write any number of lines</h3>
+            </div>
+        );
+
+      }
+}
+export default ClassEx1;
+
+
+
+
+
+
+
+
+
+props:
+------
+*Props stand for "Properties." They are read-only components.
+*Props are arguments passed into React components.
+*React Props are like function arguments in JavaScript and attributes in HTML.
+*It gives a way to pass data from one component to other components.
+* It is similar to function arguments. 
+       Props are passed to the component in the same way as arguments passed in a function.
+
+*Props are immutable so we cannot modify the props from inside the component.
+
+
+*When you need immutable data in the component, 
+        follwong examples.....
+		
+
+ex1:
+----
+
+
+import React from "react";
+
+function Greet(props){
+    console.log(props);
+    return(
+        <div>
+<h1>Hello welcome {props.name}  hmm {props.heroName}</h1>
+     {props.children}  
+     </div>
+    )
+    
+}
+export default Greet;
+
+
+
+App.js:
+---------
+
+import Greet from './Greet'
+
+
+<Greet name="sathya" heroName="allu"><Greet/>
+
+
+
+
+
+
+Ex 2:(bY USING CLASS COMPONENT)
+===============================
+
+
+
+import React,{Component} from "react";
+
+class PropsByClass extends Component{
+
+    render(){
+        return(
+<div>
+        <h2>Hello welcome {this.props.name}</h2>
+</div>
+
+        );
+    }
+
+}
+export default PropsByClass;
+
+
+App.js:
+-------
+
+<PropsByClass  name="soma"/>
+
+
+
+
+
+Ex 3:(By using class):
+==========================
+
+
+
+import React,{Component} from "react";
+
+class ExpenceByClass extends React.Component{
+
+    constructor(props){
+        super(props)
+    }
+    render(){
+        return(
+            <div>
+                 <div><b>Name of Customer :</b><em>{this.props.name}</em></div>
+                 <div><b>Customer Amount :</b><em>{this.props.amount}</em></div>
+                 <div><b>Entry Date :</b><em></em>{this.props.cusdate.toString()}</div>
+                 <div><b>Customer Category :</b><em>{this.props.category}</em></div>
+            </div>
+        );
+    }
+
+
+
+}
+
+export default ExpenceByClass;
+
+          
+
+App.js:
+-------
+
+// <ExpenceByClass
+    
+//     name="Divya soma" 
+//     amount="90000" 
+//     cusdate={new Date("2022-10-12")}
+//     category="employee fund"
+ 
+//  ></ExpenceByClass>
+
+
+
+
+
+Ex 4:(By Function):
+===================
+
+
+
+
+const ExpenseEntryItem =(props) =>{
+
+return(
+    <div>
+        <div className="hel"><b>Name: </b><em>{props.name}</em></div>
+        <div><b>Amount: </b><em>{props.amount}</em></div>
+        <div className="hel"><b>SpendDate: </b><em>{props.spendDate.toString()}</em></div>
+        <div><b>Category: </b><em>{props.Category}</em></div>
+    </div>
+);
+
+}
+export default ExpenseEntryItem;
+
+App.js file:
+------------
+
+
+
+// <ExpenseEntryItem
+// name="sathya" amount="6788" spendDate={new Date("2020-12-23")} Category="food"
+// ></ExpenseEntryItem>
+
+
+
+
+
+
+
+States:
+==================================================================>
+
+
+
+
+
+
+
+ex 1:(by Function)
+===================
+
+
+import React from "react";
+import { useState } from "react";
+
+//we need to import useState method thenonly it will allow
+function UseStateEx(){
+
+const [name, setName] = useState("sathya");
+
+return(
+    <div>
+        Your Name is:{name} <br/>
+        <button onClick={()=>setName("prakash")}>click me</button>
+    </div>
+);
+
+}
+export default UseStateEx;
+
+
+
+ex 2:
+=======>
+
+
+
+import React from "react";
+import { useState } from "react";
+import { useAge } from "react";
+
+
+
+function UseStateEx2(){
+
+ const [state, setstate] = useState("divya");
+ 
+ const [age,setAge]=useState(67);
+
+
+ const handleChange=()=>{
+    setstate("prakash")
+    setAge(34)
+ }
+
+ return(
+<div>
+          {/* by using event method we did */}
+     Your Name:<h1>{state}</h1><br/>  
+     {/* by using normal setstate we did */}
+     Your age is:<h2>{age} </h2> <br/> <br/>
+     <button onClick={handleChange}>clickName</button>
+     {/* <button onClick={()=>setAge(89)}>Clickage</button> */}
+</div>
+
+ );
+
+}
+export default UseStateEx2;
+
+
+
+ex 3:
+============>
+
+
+
+import React,{Component} from "react";
+
+class Timer extends React.Component{
+
+    constructor(){
+        super();
+        this.state={counter:0}
+    }
+    handleClick=(e)=>{
+        this.setState({counter:this.state.counter+1})
+    }
+    render(){
+        return(
+            <div>
+            <h2>Seconds elapsed:{this.state.counter}</h2>
+            <button onClick = {this.handleClick}> Increment Counter </button>
+            </div>
+        );
+    }
+
+}
+export default Timer;
+
+
+
+ex:4:
+=======>
+
+
+
+import React,{Component} from "react";
+
+class StateUp extends React.Component{
+
+    constructor(){
+        super();
+        this.state={
+            quantiy:0,
+            price:0
+        }
+    }
+
+    update=()=>{
+        this.setState(
+            {quantiy:5},()=>{if(this.state.quantiy==5){this.setState({price:2000-100})}}
+        );
+    }
+render(){
+    return(
+        <div>
+            <h1>{this.state.quantiy}</h1>
+            <h1>{this.state.price}</h1>
+            <button onClick={this.update}>Update</button>
+        </div>
+    );
+}
+
+}
+export default StateUp;
+
+
+
+
+
+
+
+React Component Life Cycle Methods:
+-----------------------------------
+Links:(https://blog.logrocket.com/react-lifecycle-methods-tutorial-examples/#componentDidUpdate)
+
+
+
+
+
+
+
+
+React comes with many life cycle methods.
+	Each of them their own purpose and acts during different phase of lifetime.
+	
+	
+1.Mounting (adding nodes to the DOM)
+       a.constructor()
+	   b.static getDerivedStateFromProps()
+       c.render()
+       d.componentDidMount()
+2.Updating (altering existing nodes in the DOM)
+       a.static getDerivedStateFromProps()
+       b.shouldComponentUpdate()
+       c.render()
+       d.getSnapshotBeforeUpdate()
+	   e.componentDidUpdate()
+
+3.Unmounting (removing nodes from the DOM)
+     a.componentWillUnmount
+4.Error handling (verifying that your code works and is bug-free)
+	   a.static getDerivedStateFromError()
+       b.componentDidCatch()
+	
+	
+HelloWorld Component:
+-----------------------
+
+class HelloWorld extends React.Component {
+   render() {
+    return <h1> Hello World </h1> 
+   }
+}
+
+
+
+output:
+-------
+
+Hello world
+
+
+
+=>when this component render output will disply on the client.
+
+   ******Before rendering component will have gone throgh with mounting,updating,unmounting phase and error handling.
+   
+**Mounting a component like bringing baby into new world. 
+     this is the component first life cycle.
+	   the component which consist of ypur code and React internals.
+	      Then finally inserted into the "DOM"
+	
+	
+*After Mounting phase, The React component "grows" during the updating phase 
+  *without updates,the component would remain as it was initially created in the "DOM".
+    * many component wants to update, whenever its need update will go with Props and states.
+	  *when enter into the updating stage finnaly it will updated in the updated state.
+
+*The final stage is Unmounting state in this state finally the component will "die"
+   The component will removed from the "DOM"
+   
+*There is one more phase, whenever we are getting errors or bugs(error handing) is handling the code 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	   
+		   
